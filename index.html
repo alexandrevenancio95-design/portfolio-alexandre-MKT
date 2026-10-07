@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alexandre Venâncio — Growth Marketing & Comunicação</title>
+<meta name="description" content="Portfólio de Alexandre Venâncio. Growth Marketing, estratégia, dados e comunicação criativa. R$ 27M em negócios gerados, +2.000% de engajamento." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #0B0F1A;
+    --bg-soft: #111827;
+    --bg-card: #151B2B;
+    --border: #1F2937;
+    --text: #E5E7EB;
+    --text-soft: #9CA3AF;
+    --text-dim: #6B7280;
+    --accent: #7C3AED;
+    --accent-soft: #A78BFA;
+    --accent-glow: rgba(124, 58, 237, 0.35);
+    --green: #22C55E;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --max: 1200px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(124, 58, 237, 0.18), transparent 42%),
+      radial-gradient(circle at 88% 15%, rgba(245, 158, 11, 0.06), transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(34, 197, 94, 0.06), transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main, nav, footer { position: relative; z-index: 1; }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 0;
+    background: rgba(11, 15, 26, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s, background .3s;
+  }
+  nav.scrolled {
+    border-bottom-color: var(--border);
+    background: rgba(11, 15, 26, 0.92);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .logo span { color: var(--accent-soft); }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    font-size: 0.875rem;
+    color: var(--text-soft);
+  }
+  .nav-links a { transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    transition: all .2s;
+  }
+  .nav-cta:hover {
+    border-color: var(--accent);
+    background: var(--accent);
+  }
+  @media (max-width: 780px) {
+    .nav-links { display: none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 80px;
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(124, 58, 237, 0.06);
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 10px var(--green);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    max-width: 15ch;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent-soft);
+  }
+  .hero p.lead {
+    font-size: clamp(1rem, 1.6vw, 1.1rem);
+    color: var(--text-soft);
+    max-width: 58ch;
+    margin-bottom: 40px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* --- foto hero --- */
+  .hero-photo {
+    position: relative;
+    justify-self: center;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 3/4;
+  }
+  .hero-photo-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1F2937, #111827);
+    border: 1px solid var(--border);
+    z-index: 2;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  }
+  .hero-photo-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(11, 15, 26, 0.75));
+    pointer-events: none;
+    z-index: 1;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform .6s ease;
+  }
+  .hero-photo:hover img { transform: scale(1.03); }
+
+  .hero-photo::before {
+    content: '';
+    position: absolute;
+    top: 18px; left: 18px;
+    width: 100%; height: 100%;
+    border: 1.5px solid var(--accent);
+    border-radius: 20px;
+    z-index: 1;
+    transition: all .4s ease;
+    opacity: 0.5;
+  }
+  .hero-photo:hover::before {
+    top: 12px; left: 12px;
+    opacity: 0.9;
+  }
+
+  .hero-photo-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 5rem;
+    font-weight: 500;
+    color: var(--accent-soft);
+    background: linear-gradient(135deg, #1a1233, #0B0F1A);
+    z-index: 0;
+  }
+
+  .hero-photo-caption {
+    position: absolute;
+    bottom: -34px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  /* metrics grid */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .metric {
+    background: var(--bg-soft);
+    padding: 28px 22px;
+    transition: background .25s;
+  }
+  .metric:hover { background: var(--bg-card); }
+  .metric-value {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .metric-value.accent { color: var(--accent-soft); }
+  .metric-label {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+  }
+  @media (max-width: 780px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ---------- SECTION ---------- */
+  section {
+    padding: 100px 0;
+    position: relative;
+  }
+  .section-head {
+    margin-bottom: 56px;
+    max-width: 720px;
+  }
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    color: var(--text-soft);
+    font-size: 1.02rem;
+    max-width: 60ch;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .about-text p {
+    color: var(--text-soft);
+    margin-bottom: 18px;
+    font-size: 1.02rem;
+  }
+  .about-text p strong { color: var(--text); font-weight: 500; }
+
+  /* --- foto sobre --- */
+  .about-photo {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+    aspect-ratio: 4/5;
+    max-width: 420px;
+  }
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    transition: transform .6s ease;
+  }
+  .about-photo:hover img { transform: scale(1.03); }
+  .about-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(11, 15, 26, 0.4));
+    pointer-events: none;
+  }
+
+  .timeline-mini {
+    border-left: 1px solid var(--border);
+    padding-left: 28px;
+  }
+  .timeline-mini-item {
+    position: relative;
+    padding-bottom: 24px;
+  }
+  .timeline-mini-item:last-child { padding-bottom: 0; }
+  .timeline-mini-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .timeline-mini-item.current::before {
+    background: var(--green);
+    border-color: var(--green);
+    box-shadow: 0 0 12px var(--green);
+  }
+  .timeline-mini-year {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .timeline-mini-role {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .timeline-mini-company {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 44px; }
+  }
+
+  /* ---------- CASE ---------- */
+  .case {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .case::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--green));
+    opacity: 0.7;
+  }
+  .case-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+  .case-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .case-subtitle {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+  }
+  .case-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    white-space: nowrap;
+    background: rgba(124, 58, 237, 0.08);
+  }
+
+  .case-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+  .case-block h4 {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .case-block p {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .case-block ul {
+    list-style: none;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+  }
+  .case-block ul li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .case-block ul li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 9px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+  }
+
+  .case-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .result-item {
+    text-align: left;
+  }
+  .result-value {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.7rem;
+    letter-spacing: -0.02em;
+    color: var(--green);
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .result-label {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+  }
+  .case-insight {
+    margin-top: 32px;
+    padding: 20px 24px;
+    border-left: 3px solid var(--accent);
+    background: rgba(124, 58, 237, 0.05);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+  @media (max-width: 640px) {
+    .case { padding: 32px 24px; }
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .skill-card {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: all .3s;
+  }
+  .skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+  .skill-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .exp-list { position: relative; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    transition: background .3s;
+  }
+  .exp-item:last-child { border-bottom: 1px solid var(--border); }
+  .exp-item:hover { background: rgba(124, 58, 237, 0.03); }
+  .exp-period {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+    padding-top: 4px;
+  }
+  .exp-role {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    color: var(--accent-soft);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  .exp-desc {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  @media (max-width: 720px) {
+    .exp-item { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact {
+    text-align: center;
+    padding: 120px 0;
+  }
+  .contact h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    margin-bottom: 20px;
+    max-width: 20ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent-soft);
+  }
+  .contact p {
+    color: var(--text-soft);
+    max-width: 50ch;
+    margin: 0 auto 40px;
+  }  /* ---------- BOTÕES ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all .25s;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 10px 30px -10px var(--accent-glow);
+  }
+  .btn-primary:hover {
+    background: var(--accent-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px -10px var(--accent-glow);
+  }
+  .btn-ghost {
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .btn-ghost:hover {
+    border-color: var(--text-soft);
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-inner a { transition: color .2s; }
+  .footer-inner a:hover { color: var(--accent-soft); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  /* ---------- RESPONSIVE HERO ---------- */
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .hero-photo {
+      max-width: 300px;
+      order: -1;
+    }
+    .hero h1 { max-width: none; }
+    .about-photo { max-width: 100%; aspect-ratio: 4/5; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">Alexandre<span>.</span>Venâncio</a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#cases">Cases</a></li>
+      <li><a href="#competencias">Competências</a></li>
+      <li><a href="#trajetoria">Trajetória</a></li>
+    </ul>
+    <a href="#contato" class="nav-cta">Vamos conversar</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <div class="hero-text">
+          <span class="hero-eyebrow">Disponível para projetos e oportunidades</span>
+          <h1>Growth Marketing com <em>estratégia, dados</em> e execução.</h1>
+          <p class="lead">
+            Sou Alexandre Venâncio. Estruturo áreas de Growth do zero, conecto marketing, produto e vendas, e transformo estratégia em resultado real de negócio — de posicionamento de marca a R$ 27 milhões em negócios fechados.
+          </p>
+          <div class="hero-actions">
+            <a href="#cases" class="btn btn-primary">Ver cases →</a>
+            <a href="#contato" class="btn btn-ghost">Entrar em contato</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <div class="hero-photo-fallback">AV</div>
+          <div class="hero-photo-frame">
+            <img 
+              src="foto.jpg" 
+              alt="Alexandre Venâncio — Growth Marketing & Comunicação"
+              onerror="this.style.display='none'"
+            />
+          </div>
+          <span class="hero-photo-caption">Alexandre Venâncio · Growth Marketing</span>
+        </div>
+
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-value accent">R$ 27M</span>
+          <span class="metric-label">Em negócios gerados na ExpoLeste 2026 (meta era R$ 12M)</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">+2.000%</span>
+          <span class="metric-label">De crescimento no engajamento do LinkedIn na Braip</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">370</span>
+          <span class="metric-label">Novos associados convertidos no Sicredi</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">3.700</span>
+          <span class="metric-label">Leads qualificados gerados em estruturação de Growth 0 a 1</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <div class="about-photo">
+            <img 
+              src="foto-sobre.jpg" 
+              alt="Alexandre Venâncio no Sicredi"
+              onerror="this.parentElement.style.display='none'"
+            />
+          </div>
+          <span class="section-label">Sobre mim</span>
+          <h2 class="section-title">Jornalismo na base, Growth na prática.</h2>
+          <p>
+            Comecei minha trajetória na comunicação e no jornalismo. Foi ali que aprendi a ouvir, interpretar contexto e traduzir o complexo em algo claro. Essa base me acompanha até hoje: antes de qualquer campanha, busco entender <strong>o problema real</strong> por trás do desafio de marketing.
+          </p>
+          <p>
+            Nos últimos anos, me especializei em <strong>Growth Marketing</strong> — estruturação de processos, funil de conversão, experimentação, análise de dados e integração entre Marketing, Produto e Vendas. Já estruturei áreas de Growth do zero, liderei equipes multidisciplinares e conectei estratégia regional a resultados concretos de negócio.
+          </p>
+          <p>
+            Atuo hoje no Sicredi Integração de Estados RS/SC/MG como Hub Regional de Marketing, sendo responsável pela frente de Growth Marketing. Antes, passei pela Braip Tecnologia, Sicoob e projetos de comunicação corporativa.
+          </p>
+          <p>
+            Acredito que performance nasce da combinação entre <strong>estratégia, dados, consistência e paciência</strong> para executar a coisa certa, no ritmo certo, com propósito.
+          </p>
+        </div>
+
+        <div class="timeline-mini reveal">
+          <div class="timeline-mini-item current">
+            <div class="timeline-mini-year">2025 — Atual</div>
+            <div class="timeline-mini-role">Hub Regional de Marketing & Growth</div>
+            <div class="timeline-mini-company">Sicredi Integração de Estados RS/SC/MG</div>
+          </div>
+          <div class="timeline-mini-item">
+            <div class="timeline-mini-year">2024 — 2025</div>
+            <div class="timeline-mini-role">Supervisor de Comunicação e Marketing</div>
+            <div class="timeline-mini-company">Braip Intermediações Financeiras & Tecnologia</div>
+          </div>
+          <div class="timeline-mini-item">
+            <div class="timeline-mini-year">2022 — 2024</div>
+            <div class="timeline-mini-role">Analista de Comunicação e Marketing</div>
+            <div class="timeline-mini-company">Sicoob AC Credi</div>
+          </div>
+          <div class="timeline-mini-item">
+            <div class="timeline-mini-year">2021 — 2023</div>
+            <div class="timeline-mini-role">Redator Técnico e Comunicação Corporativa</div>
+            <div class="timeline-mini-company">GvBIM e Intec Engenharia (Freelancer)</div>
+          </div>
+          <div class="timeline-mini-item">
+            <div class="timeline-mini-year">2018 — 2022</div>
+            <div class="timeline-mini-role">Comunicação, Rádio e Mídia</div>
+            <div class="timeline-mini-company">Univale</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section id="cases">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Cases</span>
+        <h2 class="section-title">Dois projetos, duas transformações.</h2>
+        <p class="section-desc">
+          Cada case abaixo representa uma mudança concreta de estratégia, execução e resultado — não apenas campanhas bonitas, mas impacto real em negócio.
+        </p>
+      </div>
+
+      <!-- CASE 1 -->
+      <article class="case reveal">
+        <div class="case-header">
+          <div>
+            <h3 class="case-title">ExpoLeste 2026: de vitrine para máquina de negócios</h3>
+            <p class="case-subtitle">Sicredi Integração de Estados RS/SC/MG · Evento & Growth</p>
+          </div>
+          <span class="case-tag">Sicredi · 2026</span>
+        </div>
+
+        <div class="case-body">
+          <div class="case-block">
+            <h4>Contexto</h4>
+            <p>
+              A ExpoLeste já fazia parte da estratégia de presença do Sicredi na região. Em 2024, o foco era posicionar a marca. Em 2025, consolidar presença. Em 2026, decidimos mudar: transformar a participação em uma feira orientada a negócios.
+            </p>
+          </div>
+          <div class="case-block">
+            <h4>Desafio</h4>
+            <p>
+              Equilibrar duas necessidades que parecem opostas: gerar conversão real sem abrir mão da construção de marca — e ainda superar o resultado do ano anterior com menos custo.
+            </p>
+          </div>
+          <div class="case-block">
+            <h4>Solução</h4>
+            <ul>
+              <li>Conceito "Cápsula Sicredi de Negócios": sala de vidro para negociações reservadas</li>
+              <li>Estande 360°, unindo marca, relacionamento e negócios</li>
+              <li>Tráfego pago pela primeira vez para ampliar divulgação</li>
+              <li>Mecânica promocional: printar imagem e apresentar no estande</li>
+              <li>Convites direcionados a influenciadores e formadores de opinião</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="case-results">
+          <div class="result-item">
+            <span class="result-value">R$ 27M</span>
+            <span class="result-label">Em negócios gerados (meta: R$ 12M)</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value">+125%</span>
+            <span class="result-label">Acima da meta comercial</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value">-R$ 25K</span>
+            <span class="result-label">De custo em relação à edição anterior</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value">1ª vez</span>
+            <span class="result-label">Tráfego pago aplicado ao evento</span>
+          </div>
+        </div>
+
+        <div class="case-insight">
+          Mais do que uma mudança de estande, foi uma mudança de mentalidade: saímos de uma estratégia focada em mostrar que o Sicredi estava presente, para uma estratégia capaz de provar, na prática, o valor que a instituição gera para os negócios da região.
+        </div>
+      </article>
+
+      <!-- CASE 2 -->
+      <article class="case reveal">
+        <div class="case-header">
+          <div>
+            <h3 class="case-title">Braip: reconstrução de marca e crescimento consistente</h3>
+            <p class="case-subtitle">Braip Intermediações Financeiras & Tecnologia · Reposicionamento & Growth</p>
+          </div>
+          <span class="case-tag">Braip · 2024–2025</span>
+        </div>
+
+        <div class="case-body">
+          <div class="case-block">
+            <h4>Contexto</h4>
+            <p>
+              Cheguei à Braip em um período turbulento. Crise reputacional, time desmotivado e gestão recém-substituída. Nas redes, os números refletiam o cenário: baixo engajamento e uma marca apagada.
+            </p>
+          </div>
+          <div class="case-block">
+            <h4>Desafio</h4>
+            <p>
+              Reconstruir confiança, reposicionar a empresa — de intermediadora financeira para empresa de soluções e insumos de tecnologia — e reativar uma base fiel, mas desmotivada.
+            </p>
+          </div>
+          <div class="case-block">
+            <h4>Estratégia</h4>
+            <ul>
+              <li>Premissa: fazer o arroz com feijão muito bem feito</li>
+              <li>Conteúdo baseado em valor, consistência e proximidade</li>
+              <li>Manter o planejamento mesmo sem resultado imediato</li>
+              <li>Ajustar rota sem abandonar a estratégia</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Execução semanal</h4>
+            <ul>
+              <li>2 podcasts</li>
+              <li>10 publicações no Instagram + 49 stories</li>
+              <li>4 e-mails segmentados por base</li>
+              <li>Push notifications diários + LinkedIn + artigos</li>
+              <li>Banners interativos dentro da plataforma</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="case-results">
+          <div class="result-item">
+            <span class="result-value">+350%</span>
+            <span class="result-label">De crescimento no alcance do Instagram</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value">+2.000%</span>
+            <span class="result-label">De engajamento no LinkedIn</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value">5x</span>
+            <span class="result-label">De crescimento na receita do YouTube</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value">6 → 11</span>
+            <span class="result-label">Time multidisciplinar ampliado</span>
+          </div>
+        </div>
+
+        <div class="case-insight">
+          Esse projeto me ensinou que performance nasce da combinação entre estratégia, dados, consistência e paciência para executar a coisa certa, no ritmo certo e com propósito.
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- COMPETÊNCIAS -->
+  <section id="competencias">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Competências</span>
+        <h2 class="section-title">O que eu coloco na mesa.</h2>
+        <p class="section-desc">
+          Combinação de visão estratégica, capacidade analítica, liderança e execução — com ferramentas que sustentam cada etapa do funil.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3>Growth & Estratégia</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Growth Marketing</span>
+            <span class="skill-tag">Funil de Conversão</span>
+            <span class="skill-tag">Aquisição & Retenção</span>
+            <span class="skill-tag">Experimentação</span>
+            <span class="skill-tag">Marketing Orientado a Dados</span>
+            <span class="skill-tag">KPIs</span>
+            <span class="skill-tag">Estruturação 0 a 1</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3>Mídia & CRM</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Meta Ads</span>
+            <span class="skill-tag">Google Ads</span>
+            <span class="skill-tag">LinkedIn Ads</span>
+            <span class="skill-tag">Salesforce</span>
+            <span class="skill-tag">HubSpot</span>
+            <span class="skill-tag">RD Station</span>
+            <span class="skill-tag">ActiveCampaign</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3>Analytics & Dados</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Google Analytics 4</span>
+            <span class="skill-tag">Google Tag Manager</span>
+            <span class="skill-tag">Excel Avançado</span>
+            <span class="skill-tag">Hotjar</span>
+            <span class="skill-tag">Dashboards</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3>Gestão & Projetos</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">ClickUp</span>
+            <span class="skill-tag">Notion</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Asana</span>
+            <span class="skill-tag">Trello</span>
+            <span class="skill-tag">Kanban / Scrum</span>
+            <span class="skill-tag">Liderança de Equipes</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3>Comunicação & Conteúdo</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Estratégia de Conteúdo</span>
+            <span class="skill-tag">Comunicação Corporativa</span>
+            <span class="skill-tag">Copywriting</span>
+            <span class="skill-tag">Redes Sociais</span>
+            <span class="skill-tag">Produção Audiovisual</span>
+            <span class="skill-tag">Transmídia</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3>Produção & Idiomas</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Adobe Premiere</span>
+            <span class="skill-tag">Photoshop</span>
+            <span class="skill-tag">Audition</span>
+            <span class="skill-tag">Lightroom</span>
+            <span class="skill-tag">Português (Nativo)</span>
+            <span class="skill-tag">Inglês (Avançado)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAJETÓRIA -->
+  <section id="trajetoria">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Trajetória</span>
+        <h2 class="section-title">Onde eu construí essa experiência.</h2>
+      </div>
+
+      <div class="exp-list">
+        <div class="exp-item reveal">
+          <div class="exp-period">2025 — Atual</div>
+          <div>
+            <div class="exp-role">Hub Regional de Marketing & Responsável por Growth</div>
+            <div class="exp-company">Sicredi Integração de Estados RS/SC/MG</div>
+            <p class="exp-desc">
+              Estruturação do zero da frente de Growth Marketing da cooperativa: processos, métricas, experimentação e estratégias de aquisição e retenção. Atuação como Hub Estratégico em Minas Gerais, conectando diretrizes corporativas às particularidades do mercado local. Geração de 3.700 leads qualificados e 370 novos associados.
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-period">2024 — 2025</div>
+          <div>
+            <div class="exp-role">Supervisor de Comunicação e Marketing</div>
+            <div class="exp-company">Braip Intermediações Financeiras & Tecnologia</div>
+            <p class="exp-desc">
+              Gestão de equipe multidisciplinar escalada de 6 para 11 profissionais. Condução da virada de posicionamento da Braip de intermediadora financeira para empresa de soluções e infraestrutura de tecnologia. Integração entre Marketing, Produto e Vendas em lançamentos e estratégias de aquisição.
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-period">2022 — 2024</div>
+          <div>
+            <div class="exp-role">Analista de Comunicação e Marketing</div>
+            <div class="exp-company">Sicoob AC Credi</div>
+            <p class="exp-desc">
+              Coordenação de equipe com foco em calendário de marketing, campanhas institucionais e eventos regionais. Planejamento e execução da maior campanha de consórcios da história da cooperativa: meta de R$ 17M superada com R$ 19M realizados (+90%).
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-period">2021 — 2023</div>
+          <div>
+            <div class="exp-role">Redator Técnico e Comunicação Corporativa</div>
+            <div class="exp-company">GvBIM e Intec Engenharia (Freelancer)</div>
+            <p class="exp-desc">
+              Criação de conteúdos técnicos e estratégicos para traduzir conceitos complexos de engenharia e tecnologia em linguagem clara e acessível para o mercado B2B e consumidor final.
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-period">2018 — 2022</div>
+          <div>
+            <div class="exp-role">Jornalismo, Rádio e Mídia</div>
+            <div class="exp-company">Univale</div>
+            <p class="exp-desc">
+              Produção e coordenação de podcasts, jornalismo científico e oficinas de capacitação em comunicação. Estágios formativos em apuração de pautas, redação institucional, audiovisual e edição.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contact">
+    <div class="container">
+      <div class="reveal">
+        <h2>Vamos conversar sobre <em>resultado</em>?</h2>
+        <p>
+          Estou disponível para oportunidades em Growth Marketing, Marketing estratégico e posições de liderança em comunicação. Também aberto a projetos freelance e consultorias.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:alexandrevenancio95@gmail.com" class="btn btn-primary">✉ alexandrevenancio95@gmail.com</a>
+          <a href="https://wa.me/5533987270582" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
+          <a href="https://www.linkedin.com/in/alexandresvenancio/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Alexandre Souza Venâncio</div>
+    <div>Governador Valadares · MG · Disponível para remoto</div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
