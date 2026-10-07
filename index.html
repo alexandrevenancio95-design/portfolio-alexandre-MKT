@@ -103,6 +103,13 @@
   }
   .nav-links a { transition: color .2s; }
   .nav-links a:hover { color: var(--text); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
   .nav-cta {
     font-size: 0.8rem;
     padding: 8px 16px;
@@ -115,8 +122,58 @@
     border-color: var(--accent);
     background: var(--accent);
   }
-  @media (max-width: 780px) {
+
+  /* ---------- SELETOR DE IDIOMA ---------- */
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(17, 24, 39, 0.6);
+    gap: 2px;
+  }
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border: none;
+    background: transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--text-dim);
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all .2s ease;
+  }
+  .lang-btn svg {
+    width: 18px;
+    height: 13px;
+    border-radius: 2px;
+    display: block;
+    opacity: 0.55;
+    transition: opacity .2s;
+  }
+  .lang-btn:hover { color: var(--text-soft); }
+  .lang-btn:hover svg { opacity: 0.85; }
+  .lang-btn.active {
+    background: var(--accent);
+    color: #fff;
+  }
+  .lang-btn.active svg { opacity: 1; }
+
+  @media (max-width: 900px) {
     .nav-links { display: none; }
+  }
+  @media (max-width: 640px) {
+    .lang-btn span { display: none; }
+    .lang-btn { padding: 6px; }
+  }
+  @media (max-width: 480px) {
+    .nav-cta { display: none; }
   }
 
   /* ---------- HERO ---------- */
@@ -338,7 +395,6 @@
   }
   .about-text p strong { color: var(--text); font-weight: 500; }
 
-  /* --- foto sobre --- */
   .about-photo {
     position: relative;
     border-radius: var(--radius);
@@ -638,7 +694,9 @@
     color: var(--text-soft);
     max-width: 50ch;
     margin: 0 auto 40px;
-  }  /* ---------- BOTÕES ---------- */
+  }
+
+  /* ---------- BOTÕES ---------- */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -729,12 +787,49 @@
   <div class="container nav-inner">
     <a href="#top" class="logo">Alexandre<span>.</span>Venâncio</a>
     <ul class="nav-links">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#cases">Cases</a></li>
-      <li><a href="#competencias">Competências</a></li>
-      <li><a href="#trajetoria">Trajetória</a></li>
+      <li><a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+      <li><a href="#cases" data-pt="Cases" data-en="Cases">Cases</a></li>
+      <li><a href="#competencias" data-pt="Competências" data-en="Skills">Competências</a></li>
+      <li><a href="#trajetoria" data-pt="Trajetória" data-en="Career">Trajetória</a></li>
     </ul>
-    <a href="#contato" class="nav-cta">Vamos conversar</a>
+
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language selector">
+        <button class="lang-btn active" data-lang="pt" aria-label="Português">
+          <svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="20" height="14" fill="#009C3B"/>
+            <polygon points="10,1.5 18.5,7 10,12.5 1.5,7" fill="#FFDF00"/>
+            <circle cx="10" cy="7" r="3.1" fill="#002776"/>
+            <path d="M7.2 6.1 Q10 4.9 12.8 6.5" stroke="#fff" stroke-width="0.35" fill="none"/>
+          </svg>
+          <span>PT</span>
+        </button>
+        <button class="lang-btn" data-lang="en" aria-label="English">
+          <svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="20" height="14" fill="#fff"/>
+            <g fill="#B22234">
+              <rect y="0" width="20" height="1.08"/>
+              <rect y="2.15" width="20" height="1.08"/>
+              <rect y="4.31" width="20" height="1.08"/>
+              <rect y="6.46" width="20" height="1.08"/>
+              <rect y="8.62" width="20" height="1.08"/>
+              <rect y="10.77" width="20" height="1.08"/>
+              <rect y="12.92" width="20" height="1.08"/>
+            </g>
+            <rect width="8.5" height="7.54" fill="#3C3B6E"/>
+            <g fill="#fff">
+              <circle cx="1.4" cy="1.3" r="0.35"/><circle cx="3.1" cy="1.3" r="0.35"/><circle cx="4.8" cy="1.3" r="0.35"/><circle cx="6.5" cy="1.3" r="0.35"/>
+              <circle cx="2.25" cy="2.6" r="0.35"/><circle cx="3.95" cy="2.6" r="0.35"/><circle cx="5.65" cy="2.6" r="0.35"/><circle cx="7.35" cy="2.6" r="0.35"/>
+              <circle cx="1.4" cy="3.9" r="0.35"/><circle cx="3.1" cy="3.9" r="0.35"/><circle cx="4.8" cy="3.9" r="0.35"/><circle cx="6.5" cy="3.9" r="0.35"/>
+              <circle cx="2.25" cy="5.2" r="0.35"/><circle cx="3.95" cy="5.2" r="0.35"/><circle cx="5.65" cy="5.2" r="0.35"/><circle cx="7.35" cy="5.2" r="0.35"/>
+              <circle cx="1.4" cy="6.5" r="0.35"/><circle cx="3.1" cy="6.5" r="0.35"/><circle cx="4.8" cy="6.5" r="0.35"/><circle cx="6.5" cy="6.5" r="0.35"/>
+            </g>
+          </svg>
+          <span>EN</span>
+        </button>
+      </div>
+      <a href="#contato" class="nav-cta" data-pt="Vamos conversar" data-en="Let's talk">Vamos conversar</a>
+    </div>
   </div>
 </nav>
 
@@ -746,14 +841,17 @@
       <div class="hero-grid">
 
         <div class="hero-text">
-          <span class="hero-eyebrow">Disponível para projetos e oportunidades</span>
-          <h1>Growth Marketing com <em>estratégia, dados</em> e execução.</h1>
-          <p class="lead">
+          <span class="hero-eyebrow" data-pt="Disponível para projetos e oportunidades" data-en="Available for projects and opportunities">Disponível para projetos e oportunidades</span>
+
+          <h1 data-pt-html="Growth Marketing com <em>estratégia, dados</em> e execução." data-en-html="Growth Marketing with <em>strategy, data</em> and execution.">Growth Marketing com <em>estratégia, dados</em> e execução.</h1>
+
+          <p class="lead" data-pt="Sou Alexandre Venâncio. Especialista em Gestão de Comunicação e Growth, conecto marketing, produto e vendas, e transformo estratégia em resultado real de negócio, de posicionamento de marca a R$ 27 milhões em negócios fechados em um único evento." data-en="I'm Alexandre Venâncio. A specialist in Communication Management and Growth, I connect marketing, product and sales, and turn strategy into real business results — from brand positioning to R$ 27 million in deals closed at a single event.">
             Sou Alexandre Venâncio. Especialista em Gestão de Comunicação e Growth, conecto marketing, produto e vendas, e transformo estratégia em resultado real de negócio, de posicionamento de marca a R$ 27 milhões em negócios fechados em um único evento.
           </p>
+
           <div class="hero-actions">
-            <a href="#cases" class="btn btn-primary">Ver cases →</a>
-            <a href="#contato" class="btn btn-ghost">Entrar em contato</a>
+            <a href="#cases" class="btn btn-primary" data-pt="Ver cases →" data-en="View cases →">Ver cases →</a>
+            <a href="#contato" class="btn btn-ghost" data-pt="Entrar em contato" data-en="Get in touch">Entrar em contato</a>
           </div>
         </div>
 
@@ -774,19 +872,19 @@
       <div class="metrics">
         <div class="metric">
           <span class="metric-value accent">R$ 27M</span>
-          <span class="metric-label">Em negócios gerados na ExpoLeste 2026 (meta era R$ 12M)</span>
+          <span class="metric-label" data-pt="Em negócios gerados na ExpoLeste 2026 (meta era R$ 12M)" data-en="In deals generated at ExpoLeste 2026 (target was R$ 12M)">Em negócios gerados na ExpoLeste 2026 (meta era R$ 12M)</span>
         </div>
         <div class="metric">
           <span class="metric-value">+2.000%</span>
-          <span class="metric-label">De crescimento no engajamento do LinkedIn na Braip</span>
+          <span class="metric-label" data-pt="De crescimento no engajamento do LinkedIn na Braip" data-en="Growth in LinkedIn engagement at Braip">De crescimento no engajamento do LinkedIn na Braip</span>
         </div>
         <div class="metric">
           <span class="metric-value">10%</span>
-          <span class="metric-label">De conversão de novos associados convertidos no Sicredi</span>
+          <span class="metric-label" data-pt="De conversão de novos associados convertidos no Sicredi" data-en="Conversion rate of new members at Sicredi">De conversão de novos associados convertidos no Sicredi</span>
         </div>
         <div class="metric">
           <span class="metric-value">3.700</span>
-          <span class="metric-label">Leads qualificados gerados em estruturação de Growth 0 a 1</span>
+          <span class="metric-label" data-pt="Leads qualificados gerados em estruturação de Growth 0 a 1" data-en="Qualified leads generated in a 0-to-1 Growth build">Leads qualificados gerados em estruturação de Growth 0 a 1</span>
         </div>
       </div>
     </div>
@@ -804,46 +902,50 @@
               onerror="this.parentElement.style.display='none'"
             />
           </div>
-          <span class="section-label">Sobre mim</span>
-          <h2 class="section-title">Jornalismo na base, Growth na prática.</h2>
-          <p>
+          <span class="section-label" data-pt="Sobre mim" data-en="About me">Sobre mim</span>
+          <h2 class="section-title" data-pt="Jornalismo na base, Growth na prática." data-en="Journalism at the core, Growth in practice.">Jornalismo na base, Growth na prática.</h2>
+
+          <p data-pt-html="Comecei minha trajetória na comunicação e no jornalismo. Foi ali que aprendi a ouvir, interpretar contexto e traduzir o complexo em algo claro. Essa base me acompanha até hoje: antes de qualquer campanha, busco entender <strong>o problema real</strong> por trás do desafio de marketing." data-en-html="I started my career in communication and journalism. That's where I learned to listen, read context and translate complexity into clarity. That foundation stays with me today: before any campaign, I seek to understand the <strong>real problem</strong> behind the marketing challenge.">
             Comecei minha trajetória na comunicação e no jornalismo. Foi ali que aprendi a ouvir, interpretar contexto e traduzir o complexo em algo claro. Essa base me acompanha até hoje: antes de qualquer campanha, busco entender <strong>o problema real</strong> por trás do desafio de marketing.
           </p>
-          <p>
+
+          <p data-pt-html="Nos últimos anos, me especializei em <strong>Growth Marketing</strong> — estruturação de processos, funil de conversão, experimentação, análise de dados e integração entre Marketing, Produto e Vendas. Já estruturei áreas de Growth do zero, liderei equipes multidisciplinares e conectei estratégia regional a resultados concretos de negócio." data-en-html="In recent years, I specialized in <strong>Growth Marketing</strong> — process design, conversion funnels, experimentation, data analysis and integration across Marketing, Product and Sales. I've built Growth areas from scratch, led multidisciplinary teams and connected regional strategy to concrete business results.">
             Nos últimos anos, me especializei em <strong>Growth Marketing</strong> — estruturação de processos, funil de conversão, experimentação, análise de dados e integração entre Marketing, Produto e Vendas. Já estruturei áreas de Growth do zero, liderei equipes multidisciplinares e conectei estratégia regional a resultados concretos de negócio.
           </p>
-          <p>
+
+          <p data-pt="Atuo hoje no Sicredi Integração de Estados RS/SC/MG como Hub Regional de Marketing, sendo responsável pela frente de Growth Marketing. Antes, passei pela Braip Tecnologia, Sicoob e projetos de comunicação corporativa." data-en="I currently work at Sicredi Integração de Estados RS/SC/MG as a Regional Marketing Hub, leading the Growth Marketing front. Previously, I worked at Braip Technology, Sicoob and corporate communication projects.">
             Atuo hoje no Sicredi Integração de Estados RS/SC/MG como Hub Regional de Marketing, sendo responsável pela frente de Growth Marketing. Antes, passei pela Braip Tecnologia, Sicoob e projetos de comunicação corporativa.
           </p>
-          <p>
+
+          <p data-pt-html="Acredito que performance nasce da combinação entre <strong>estratégia, dados, consistência e paciência</strong> para executar a coisa certa, no ritmo certo, com propósito." data-en-html="I believe performance comes from the combination of <strong>strategy, data, consistency and patience</strong> to execute the right thing, at the right pace, with purpose.">
             Acredito que performance nasce da combinação entre <strong>estratégia, dados, consistência e paciência</strong> para executar a coisa certa, no ritmo certo, com propósito.
           </p>
         </div>
 
         <div class="timeline-mini reveal">
           <div class="timeline-mini-item current">
-            <div class="timeline-mini-year">2025 — Atual</div>
-            <div class="timeline-mini-role">Hub Regional de Marketing & Growth</div>
+            <div class="timeline-mini-year">2025 — <span data-pt="Atual" data-en="Present">Atual</span></div>
+            <div class="timeline-mini-role" data-pt="Hub Regional de Marketing & Growth" data-en="Regional Marketing & Growth Hub">Hub Regional de Marketing & Growth</div>
             <div class="timeline-mini-company">Sicredi Integração de Estados RS/SC/MG</div>
           </div>
           <div class="timeline-mini-item">
             <div class="timeline-mini-year">2024 — 2025</div>
-            <div class="timeline-mini-role">Supervisor de Comunicação e Marketing</div>
+            <div class="timeline-mini-role" data-pt="Supervisor de Comunicação e Marketing" data-en="Communication & Marketing Supervisor">Supervisor de Comunicação e Marketing</div>
             <div class="timeline-mini-company">Braip Intermediações Financeiras & Tecnologia</div>
           </div>
           <div class="timeline-mini-item">
             <div class="timeline-mini-year">2022 — 2024</div>
-            <div class="timeline-mini-role">Analista de Comunicação e Marketing</div>
+            <div class="timeline-mini-role" data-pt="Analista de Comunicação e Marketing" data-en="Communication & Marketing Analyst">Analista de Comunicação e Marketing</div>
             <div class="timeline-mini-company">Sicoob AC Credi</div>
           </div>
           <div class="timeline-mini-item">
             <div class="timeline-mini-year">2021 — 2023</div>
-            <div class="timeline-mini-role">Redator Técnico e Comunicação Corporativa</div>
-            <div class="timeline-mini-company">GvBIM e Intec Engenharia (Freelancer)</div>
+            <div class="timeline-mini-role" data-pt="Redator Técnico e Comunicação Corporativa" data-en="Technical Writer & Corporate Communication">Redator Técnico e Comunicação Corporativa</div>
+            <div class="timeline-mini-company" data-pt="GvBIM e Intec Engenharia (Freelancer)" data-en="GvBIM & Intec Engineering (Freelancer)">GvBIM e Intec Engenharia (Freelancer)</div>
           </div>
           <div class="timeline-mini-item">
             <div class="timeline-mini-year">2018 — 2022</div>
-            <div class="timeline-mini-role">Comunicação, Rádio e Mídia</div>
+            <div class="timeline-mini-role" data-pt="Comunicação, Rádio e Mídia" data-en="Communication, Radio & Media">Comunicação, Rádio e Mídia</div>
             <div class="timeline-mini-company">Univale</div>
           </div>
         </div>
@@ -856,8 +958,8 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="section-label">Cases</span>
-        <h2 class="section-title">Dois projetos, duas transformações.</h2>
-        <p class="section-desc">
+        <h2 class="section-title" data-pt="Dois projetos, duas transformações." data-en="Two projects, two transformations.">Dois projetos, duas transformações.</h2>
+        <p class="section-desc" data-pt="Cada case abaixo representa uma mudança concreta de estratégia, execução e resultado — não apenas campanhas bonitas, mas impacto real em negócio." data-en="Each case below represents a concrete shift in strategy, execution and results — not just pretty campaigns, but real business impact.">
           Cada case abaixo representa uma mudança concreta de estratégia, execução e resultado — não apenas campanhas bonitas, mas impacto real em negócio.
         </p>
       </div>
@@ -866,28 +968,28 @@
       <article class="case reveal">
         <div class="case-header">
           <div>
-            <h3 class="case-title">ExpoLeste 2026: de vitrine para máquina de negócios</h3>
-            <p class="case-subtitle">Sicredi Integração de Estados RS/SC/MG · Evento & Growth</p>
+            <h3 class="case-title" data-pt="ExpoLeste 2026: de vitrine para máquina de negócios" data-en="ExpoLeste 2026: from showcase to business machine">ExpoLeste 2026: de vitrine para máquina de negócios</h3>
+            <p class="case-subtitle" data-pt="Sicredi Integração de Estados RS/SC/MG · Evento & Growth" data-en="Sicredi Integração de Estados RS/SC/MG · Event & Growth">Sicredi Integração de Estados RS/SC/MG · Evento & Growth</p>
           </div>
           <span class="case-tag">Sicredi · 2026</span>
         </div>
 
         <div class="case-body">
           <div class="case-block">
-            <h4>Contexto</h4>
-            <p>
+            <h4 data-pt="Contexto" data-en="Context">Contexto</h4>
+            <p data-pt="A ExpoLeste já fazia parte da estratégia de presença do Sicredi na região. Em 2024, o foco era posicionar a marca. Em 2025, consolidar presença. Em 2026, decidimos mudar: transformar a participação em uma feira orientada a negócios." data-en="ExpoLeste was already part of Sicredi's regional presence strategy. In 2024, the focus was brand positioning. In 2025, consolidating presence. In 2026, we decided to change: turn the participation into a business-driven trade fair.">
               A ExpoLeste já fazia parte da estratégia de presença do Sicredi na região. Em 2024, o foco era posicionar a marca. Em 2025, consolidar presença. Em 2026, decidimos mudar: transformar a participação em uma feira orientada a negócios.
             </p>
           </div>
           <div class="case-block">
-            <h4>Desafio</h4>
-            <p>
+            <h4 data-pt="Desafio" data-en="Challenge">Desafio</h4>
+            <p data-pt="Equilibrar duas necessidades que parecem opostas: gerar conversão real sem abrir mão da construção de marca — e ainda superar o resultado do ano anterior com menos custo." data-en="Balance two seemingly opposite needs: drive real conversion without sacrificing brand building — and still beat the previous year's result at a lower cost.">
               Equilibrar duas necessidades que parecem opostas: gerar conversão real sem abrir mão da construção de marca — e ainda superar o resultado do ano anterior com menos custo.
             </p>
           </div>
           <div class="case-block">
-            <h4>Solução</h4>
-            <ul>
+            <h4 data-pt="Solução" data-en="Solution">Solução</h4>
+            <ul data-pt-html='<li>Conceito "Cápsula Sicredi de Negócios": sala de vidro para negociações reservadas</li><li>Estande 360°, unindo marca, relacionamento e negócios</li><li>Tráfego pago pela primeira vez para ampliar divulgação</li><li>Mecânica promocional: printar imagem e apresentar no estande</li><li>Convites direcionados a influenciadores e formadores de opinião</li>' data-en-html='<li>"Sicredi Business Capsule" concept: glass room for private negotiations</li><li>360° booth, uniting brand, relationship and business</li><li>Paid traffic for the first time to boost reach</li><li>Promotional mechanic: screenshot the image and present it at the booth</li><li>Targeted invites to influencers and opinion leaders</li>'>
               <li>Conceito "Cápsula Sicredi de Negócios": sala de vidro para negociações reservadas</li>
               <li>Estande 360°, unindo marca, relacionamento e negócios</li>
               <li>Tráfego pago pela primeira vez para ampliar divulgação</li>
@@ -900,23 +1002,23 @@
         <div class="case-results">
           <div class="result-item">
             <span class="result-value">R$ 27M</span>
-            <span class="result-label">Em negócios gerados (meta: R$ 12M)</span>
+            <span class="result-label" data-pt="Em negócios gerados (meta: R$ 12M)" data-en="In deals generated (target: R$ 12M)">Em negócios gerados (meta: R$ 12M)</span>
           </div>
           <div class="result-item">
             <span class="result-value">+125%</span>
-            <span class="result-label">Acima da meta comercial</span>
+            <span class="result-label" data-pt="Acima da meta comercial" data-en="Above the sales target">Acima da meta comercial</span>
           </div>
           <div class="result-item">
             <span class="result-value">-R$ 25K</span>
-            <span class="result-label">De custo em relação à edição anterior</span>
+            <span class="result-label" data-pt="De custo em relação à edição anterior" data-en="In cost compared to the previous edition">De custo em relação à edição anterior</span>
           </div>
           <div class="result-item">
-            <span class="result-value">1ª vez</span>
-            <span class="result-label">Tráfego pago aplicado ao evento</span>
+            <span class="result-value" data-pt="1ª vez" data-en="1st time">1ª vez</span>
+            <span class="result-label" data-pt="Tráfego pago aplicado ao evento" data-en="Paid traffic applied to the event">Tráfego pago aplicado ao evento</span>
           </div>
         </div>
 
-        <div class="case-insight">
+        <div class="case-insight" data-pt="Mais do que uma mudança de estande, foi uma mudança de mentalidade: saímos de uma estratégia focada em mostrar que o Sicredi estava presente, para uma estratégia capaz de provar, na prática, o valor que a instituição gera para os negócios da região." data-en="More than a booth change, it was a mindset shift: we moved from a strategy focused on showing Sicredi was present, to one capable of proving, in practice, the value the institution generates for regional businesses.">
           Mais do que uma mudança de estande, foi uma mudança de mentalidade: saímos de uma estratégia focada em mostrar que o Sicredi estava presente, para uma estratégia capaz de provar, na prática, o valor que a instituição gera para os negócios da região.
         </div>
       </article>
@@ -925,28 +1027,28 @@
       <article class="case reveal">
         <div class="case-header">
           <div>
-            <h3 class="case-title">Braip: reconstrução de marca e crescimento consistente</h3>
-            <p class="case-subtitle">Braip Intermediações Financeiras & Tecnologia · Reposicionamento & Growth</p>
+            <h3 class="case-title" data-pt="Braip: reconstrução de marca e crescimento consistente" data-en="Braip: brand rebuild and consistent growth">Braip: reconstrução de marca e crescimento consistente</h3>
+            <p class="case-subtitle" data-pt="Braip Intermediações Financeiras & Tecnologia · Reposicionamento & Growth" data-en="Braip Financial & Technology Intermediations · Repositioning & Growth">Braip Intermediações Financeiras & Tecnologia · Reposicionamento & Growth</p>
           </div>
           <span class="case-tag">Braip · 2024–2025</span>
         </div>
 
         <div class="case-body">
           <div class="case-block">
-            <h4>Contexto</h4>
-            <p>
+            <h4 data-pt="Contexto" data-en="Context">Contexto</h4>
+            <p data-pt="Cheguei à Braip em um período turbulento. Crise reputacional, time desmotivado e gestão recém-substituída. Nas redes, os números refletiam o cenário: baixo engajamento e uma marca apagada." data-en="I joined Braip during a turbulent period. Reputational crisis, demotivated team and freshly replaced leadership. On social media, the numbers reflected the scenario: low engagement and a faded brand.">
               Cheguei à Braip em um período turbulento. Crise reputacional, time desmotivado e gestão recém-substituída. Nas redes, os números refletiam o cenário: baixo engajamento e uma marca apagada.
             </p>
           </div>
           <div class="case-block">
-            <h4>Desafio</h4>
-            <p>
+            <h4 data-pt="Desafio" data-en="Challenge">Desafio</h4>
+            <p data-pt="Reconstruir confiança, reposicionar a empresa — de intermediadora financeira para empresa de soluções e insumos de tecnologia — e reativar uma base fiel, mas desmotivada." data-en="Rebuild trust, reposition the company — from financial intermediary to technology solutions provider — and reactivate a loyal but demotivated base.">
               Reconstruir confiança, reposicionar a empresa — de intermediadora financeira para empresa de soluções e insumos de tecnologia — e reativar uma base fiel, mas desmotivada.
             </p>
           </div>
           <div class="case-block">
-            <h4>Estratégia</h4>
-            <ul>
+            <h4 data-pt="Estratégia" data-en="Strategy">Estratégia</h4>
+            <ul data-pt-html='<li>Premissa: fazer o arroz com feijão muito bem feito</li><li>Conteúdo baseado em valor, consistência e proximidade</li><li>Manter o planejamento mesmo sem resultado imediato</li><li>Ajustar rota sem abandonar a estratégia</li>' data-en-html='<li>Premise: do the basics really, really well</li><li>Content based on value, consistency and proximity</li><li>Stick to the plan even without immediate results</li><li>Adjust course without abandoning the strategy</li>'>
               <li>Premissa: fazer o arroz com feijão muito bem feito</li>
               <li>Conteúdo baseado em valor, consistência e proximidade</li>
               <li>Manter o planejamento mesmo sem resultado imediato</li>
@@ -954,8 +1056,8 @@
             </ul>
           </div>
           <div class="case-block">
-            <h4>Execução semanal</h4>
-            <ul>
+            <h4 data-pt="Execução semanal" data-en="Weekly execution">Execução semanal</h4>
+            <ul data-pt-html='<li>2 podcasts</li><li>10 publicações no Instagram + 49 stories</li><li>4 e-mails segmentados por base</li><li>Push notifications diários + LinkedIn + artigos</li><li>Banners interativos dentro da plataforma</li>' data-en-html='<li>2 podcasts</li><li>10 Instagram posts + 49 stories</li><li>4 segmented email campaigns per base</li><li>Daily push notifications + LinkedIn + articles</li><li>Interactive banners inside the platform</li>'>
               <li>2 podcasts</li>
               <li>10 publicações no Instagram + 49 stories</li>
               <li>4 e-mails segmentados por base</li>
@@ -968,23 +1070,23 @@
         <div class="case-results">
           <div class="result-item">
             <span class="result-value">+350%</span>
-            <span class="result-label">De crescimento no alcance do Instagram</span>
+            <span class="result-label" data-pt="De crescimento no alcance do Instagram" data-en="Growth in Instagram reach">De crescimento no alcance do Instagram</span>
           </div>
           <div class="result-item">
             <span class="result-value">+2.000%</span>
-            <span class="result-label">De engajamento no LinkedIn</span>
+            <span class="result-label" data-pt="De engajamento no LinkedIn" data-en="Increase in LinkedIn engagement">De engajamento no LinkedIn</span>
           </div>
           <div class="result-item">
             <span class="result-value">5x</span>
-            <span class="result-label">De crescimento na receita do YouTube</span>
+            <span class="result-label" data-pt="De crescimento na receita do YouTube" data-en="Growth in YouTube revenue">De crescimento na receita do YouTube</span>
           </div>
           <div class="result-item">
             <span class="result-value">6 → 11</span>
-            <span class="result-label">Time multidisciplinar ampliado</span>
+            <span class="result-label" data-pt="Time multidisciplinar ampliado" data-en="Multidisciplinary team expanded">Time multidisciplinar ampliado</span>
           </div>
         </div>
 
-        <div class="case-insight">
+        <div class="case-insight" data-pt="Esse projeto me ensinou que performance nasce da combinação entre estratégia, dados, consistência e paciência para executar a coisa certa, no ritmo certo e com propósito." data-en="This project taught me that performance comes from combining strategy, data, consistency and patience to execute the right thing, at the right pace and with purpose.">
           Esse projeto me ensinou que performance nasce da combinação entre estratégia, dados, consistência e paciência para executar a coisa certa, no ritmo certo e com propósito.
         </div>
       </article>
@@ -996,29 +1098,29 @@
   <section id="competencias">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-label">Competências</span>
-        <h2 class="section-title">O que eu trago na mochila.</h2>
-        <p class="section-desc">
+        <span class="section-label" data-pt="Competências" data-en="Skills">Competências</span>
+        <h2 class="section-title" data-pt="O que eu trago na mochila." data-en="What I bring to the table.">O que eu trago na mochila.</h2>
+        <p class="section-desc" data-pt="Combinação de visão estratégica, capacidade analítica, liderança e execução — com ferramentas que sustentam cada etapa do funil." data-en="A blend of strategic vision, analytical capability, leadership and execution — with tools that support every stage of the funnel.">
           Combinação de visão estratégica, capacidade analítica, liderança e execução — com ferramentas que sustentam cada etapa do funil.
         </p>
       </div>
 
       <div class="skills-grid">
         <div class="skill-card reveal">
-          <h3>Growth & Estratégia</h3>
+          <h3 data-pt="Growth & Estratégia" data-en="Growth & Strategy">Growth & Estratégia</h3>
           <div class="skill-tags">
             <span class="skill-tag">Growth Marketing</span>
-            <span class="skill-tag">Funil de Conversão</span>
-            <span class="skill-tag">Aquisição & Retenção</span>
-            <span class="skill-tag">Experimentação</span>
-            <span class="skill-tag">Marketing Orientado a Dados</span>
+            <span class="skill-tag" data-pt="Funil de Conversão" data-en="Conversion Funnel">Funil de Conversão</span>
+            <span class="skill-tag" data-pt="Aquisição & Retenção" data-en="Acquisition & Retention">Aquisição & Retenção</span>
+            <span class="skill-tag" data-pt="Experimentação" data-en="Experimentation">Experimentação</span>
+            <span class="skill-tag" data-pt="Marketing Orientado a Dados" data-en="Data-Driven Marketing">Marketing Orientado a Dados</span>
             <span class="skill-tag">KPIs</span>
-            <span class="skill-tag">Estruturação 0 a 1</span>
+            <span class="skill-tag" data-pt="Estruturação 0 a 1" data-en="0-to-1 Build">Estruturação 0 a 1</span>
           </div>
         </div>
 
         <div class="skill-card reveal">
-          <h3>Mídia & CRM</h3>
+          <h3 data-pt="Mídia & CRM" data-en="Media & CRM">Mídia & CRM</h3>
           <div class="skill-tags">
             <span class="skill-tag">Meta Ads</span>
             <span class="skill-tag">Google Ads</span>
@@ -1031,19 +1133,19 @@
         </div>
 
         <div class="skill-card reveal">
-          <h3>Analytics & Dados</h3>
+          <h3 data-pt="Analytics & Dados" data-en="Analytics & Data">Analytics & Dados</h3>
           <div class="skill-tags">
             <span class="skill-tag">Power BI</span>
             <span class="skill-tag">Google Analytics 4</span>
             <span class="skill-tag">Google Tag Manager</span>
-            <span class="skill-tag">Excel Avançado</span>
+            <span class="skill-tag" data-pt="Excel Avançado" data-en="Advanced Excel">Excel Avançado</span>
             <span class="skill-tag">Hotjar</span>
             <span class="skill-tag">Dashboards</span>
           </div>
         </div>
 
         <div class="skill-card reveal">
-          <h3>Gestão & Projetos</h3>
+          <h3 data-pt="Gestão & Projetos" data-en="Management & Projects">Gestão & Projetos</h3>
           <div class="skill-tags">
             <span class="skill-tag">ClickUp</span>
             <span class="skill-tag">Notion</span>
@@ -1051,31 +1153,31 @@
             <span class="skill-tag">Asana</span>
             <span class="skill-tag">Trello</span>
             <span class="skill-tag">Kanban / Scrum</span>
-            <span class="skill-tag">Liderança de Equipes</span>
+            <span class="skill-tag" data-pt="Liderança de Equipes" data-en="Team Leadership">Liderança de Equipes</span>
           </div>
         </div>
 
         <div class="skill-card reveal">
-          <h3>Comunicação & Conteúdo</h3>
+          <h3 data-pt="Comunicação & Conteúdo" data-en="Communication & Content">Comunicação & Conteúdo</h3>
           <div class="skill-tags">
-            <span class="skill-tag">Estratégia de Conteúdo</span>
-            <span class="skill-tag">Comunicação Corporativa</span>
+            <span class="skill-tag" data-pt="Estratégia de Conteúdo" data-en="Content Strategy">Estratégia de Conteúdo</span>
+            <span class="skill-tag" data-pt="Comunicação Corporativa" data-en="Corporate Communication">Comunicação Corporativa</span>
             <span class="skill-tag">Copywriting</span>
-            <span class="skill-tag">Redes Sociais</span>
-            <span class="skill-tag">Produção Audiovisual</span>
-            <span class="skill-tag">Transmídia</span>
+            <span class="skill-tag" data-pt="Redes Sociais" data-en="Social Media">Redes Sociais</span>
+            <span class="skill-tag" data-pt="Produção Audiovisual" data-en="Audiovisual Production">Produção Audiovisual</span>
+            <span class="skill-tag" data-pt="Transmídia" data-en="Transmedia">Transmídia</span>
           </div>
         </div>
 
         <div class="skill-card reveal">
-          <h3>Produção & Idiomas</h3>
+          <h3 data-pt="Produção & Idiomas" data-en="Production & Languages">Produção & Idiomas</h3>
           <div class="skill-tags">
             <span class="skill-tag">Adobe Premiere</span>
             <span class="skill-tag">Photoshop</span>
             <span class="skill-tag">Audition</span>
             <span class="skill-tag">Lightroom</span>
-            <span class="skill-tag">Português (Nativo)</span>
-            <span class="skill-tag">Inglês (Avançado)</span>
+            <span class="skill-tag" data-pt="Português (Nativo)" data-en="Portuguese (Native)">Português (Nativo)</span>
+            <span class="skill-tag" data-pt="Inglês (Avançado)" data-en="English (Advanced)">Inglês (Avançado)</span>
           </div>
         </div>
       </div>
@@ -1086,17 +1188,17 @@
   <section id="trajetoria">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-label">Trajetória</span>
-        <h2 class="section-title">Onde eu construí essa experiência.</h2>
+        <span class="section-label" data-pt="Trajetória" data-en="Career">Trajetória</span>
+        <h2 class="section-title" data-pt="Onde eu construí essa experiência." data-en="Where I built this experience.">Onde eu construí essa experiência.</h2>
       </div>
 
       <div class="exp-list">
         <div class="exp-item reveal">
-          <div class="exp-period">2025 — Atual</div>
+          <div class="exp-period">2025 — <span data-pt="Atual" data-en="Present">Atual</span></div>
           <div>
-            <div class="exp-role">Hub Regional de Marketing & Responsável por Growth</div>
+            <div class="exp-role" data-pt="Hub Regional de Marketing & Responsável por Growth" data-en="Regional Marketing Hub & Growth Lead">Hub Regional de Marketing & Responsável por Growth</div>
             <div class="exp-company">Sicredi Integração de Estados RS/SC/MG</div>
-            <p class="exp-desc">
+            <p class="exp-desc" data-pt="Estruturação do zero da frente de Growth Marketing da cooperativa: processos, métricas, experimentação e estratégias de aquisição e retenção. Atuação como Hub Estratégico em Minas Gerais, conectando diretrizes corporativas às particularidades do mercado local. Geração de 3.700 leads qualificados e 370 novos associados." data-en="Built the cooperative's Growth Marketing front from scratch: processes, metrics, experimentation and acquisition/retention strategies. Acting as a Strategic Hub in Minas Gerais, connecting corporate guidelines to local market specifics. Generated 3,700 qualified leads and 370 new members.">
               Estruturação do zero da frente de Growth Marketing da cooperativa: processos, métricas, experimentação e estratégias de aquisição e retenção. Atuação como Hub Estratégico em Minas Gerais, conectando diretrizes corporativas às particularidades do mercado local. Geração de 3.700 leads qualificados e 370 novos associados.
             </p>
           </div>
@@ -1105,9 +1207,9 @@
         <div class="exp-item reveal">
           <div class="exp-period">2024 — 2025</div>
           <div>
-            <div class="exp-role">Supervisor de Comunicação e Marketing</div>
+            <div class="exp-role" data-pt="Supervisor de Comunicação e Marketing" data-en="Communication & Marketing Supervisor">Supervisor de Comunicação e Marketing</div>
             <div class="exp-company">Braip Intermediações Financeiras & Tecnologia</div>
-            <p class="exp-desc">
+            <p class="exp-desc" data-pt="Gestão de equipe multidisciplinar escalada de 6 para 11 profissionais. Condução da virada de posicionamento da Braip de intermediadora financeira para empresa de soluções e infraestrutura de tecnologia. Integração entre Marketing, Produto e Vendas em lançamentos e estratégias de aquisição." data-en="Managed a multidisciplinary team scaled from 6 to 11 professionals. Led Braip's positioning shift from financial intermediary to technology solutions and infrastructure company. Integrated Marketing, Product and Sales in launches and acquisition strategies.">
               Gestão de equipe multidisciplinar escalada de 6 para 11 profissionais. Condução da virada de posicionamento da Braip de intermediadora financeira para empresa de soluções e infraestrutura de tecnologia. Integração entre Marketing, Produto e Vendas em lançamentos e estratégias de aquisição.
             </p>
           </div>
@@ -1116,9 +1218,9 @@
         <div class="exp-item reveal">
           <div class="exp-period">2022 — 2024</div>
           <div>
-            <div class="exp-role">Analista de Comunicação e Marketing</div>
+            <div class="exp-role" data-pt="Analista de Comunicação e Marketing" data-en="Communication & Marketing Analyst">Analista de Comunicação e Marketing</div>
             <div class="exp-company">Sicoob AC Credi</div>
-            <p class="exp-desc">
+            <p class="exp-desc" data-pt="Coordenação de equipe com foco em calendário de marketing, campanhas institucionais e eventos regionais. Planejamento e execução da maior campanha de consórcios da história da cooperativa: meta de R$ 17M superada com R$ 19M realizados (+90%)." data-en="Team coordination focused on marketing calendar, institutional campaigns and regional events. Planned and executed the largest consortium campaign in the cooperative's history: R$ 17M target exceeded with R$ 19M delivered (+90%).">
               Coordenação de equipe com foco em calendário de marketing, campanhas institucionais e eventos regionais. Planejamento e execução da maior campanha de consórcios da história da cooperativa: meta de R$ 17M superada com R$ 19M realizados (+90%).
             </p>
           </div>
@@ -1127,9 +1229,9 @@
         <div class="exp-item reveal">
           <div class="exp-period">2021 — 2023</div>
           <div>
-            <div class="exp-role">Redator Técnico e Comunicação Corporativa</div>
-            <div class="exp-company">GvBIM e Intec Engenharia (Freelancer)</div>
-            <p class="exp-desc">
+            <div class="exp-role" data-pt="Redator Técnico e Comunicação Corporativa" data-en="Technical Writer & Corporate Communication">Redator Técnico e Comunicação Corporativa</div>
+            <div class="exp-company" data-pt="GvBIM e Intec Engenharia (Freelancer)" data-en="GvBIM & Intec Engineering (Freelancer)">GvBIM e Intec Engenharia (Freelancer)</div>
+            <p class="exp-desc" data-pt="Criação de conteúdos técnicos e estratégicos para traduzir conceitos complexos de engenharia e tecnologia em linguagem clara e acessível para o mercado B2B e consumidor final." data-en="Created technical and strategic content to translate complex engineering and technology concepts into clear, accessible language for B2B and end consumers.">
               Criação de conteúdos técnicos e estratégicos para traduzir conceitos complexos de engenharia e tecnologia em linguagem clara e acessível para o mercado B2B e consumidor final.
             </p>
           </div>
@@ -1138,9 +1240,9 @@
         <div class="exp-item reveal">
           <div class="exp-period">2018 — 2022</div>
           <div>
-            <div class="exp-role">Jornalismo, Rádio e Mídia</div>
+            <div class="exp-role" data-pt="Jornalismo, Rádio e Mídia" data-en="Journalism, Radio & Media">Jornalismo, Rádio e Mídia</div>
             <div class="exp-company">Univale</div>
-            <p class="exp-desc">
+            <p class="exp-desc" data-pt="Produção e coordenação de podcasts, jornalismo científico e oficinas de capacitação em comunicação. Estágios formativos em apuração de pautas, redação institucional, audiovisual e edição." data-en="Production and coordination of podcasts, science journalism and communication training workshops. Internships in story research, institutional writing, audiovisual and editing.">
               Produção e coordenação de podcasts, jornalismo científico e oficinas de capacitação em comunicação. Estágios formativos em apuração de pautas, redação institucional, audiovisual e edição.
             </p>
           </div>
@@ -1153,8 +1255,8 @@
   <section id="contato" class="contact">
     <div class="container">
       <div class="reveal">
-        <h2>Vamos conversar sobre <em>resultado</em>?</h2>
-        <p>
+        <h2 data-pt-html="Vamos conversar sobre <em>resultado</em>?" data-en-html="Let's talk about <em>results</em>?">Vamos conversar sobre <em>resultado</em>?</h2>
+        <p data-pt="Estou disponível para oportunidades em Growth Marketing, Marketing estratégico e posições de liderança em comunicação. Também aberto a projetos freelance e consultorias." data-en="I'm available for opportunities in Growth Marketing, strategic Marketing and leadership roles in communication. Also open to freelance projects and consulting.">
           Estou disponível para oportunidades em Growth Marketing, Marketing estratégico e posições de liderança em comunicação. Também aberto a projetos freelance e consultorias.
         </p>
         <div class="contact-links">
@@ -1171,7 +1273,7 @@
 <footer>
   <div class="container footer-inner">
     <div>© <span id="year"></span> Alexandre Souza Venâncio</div>
-    <div>Governador Valadares · MG · Disponível para remoto</div>
+    <div data-pt="Governador Valadares · MG · Disponível para remoto" data-en="Governador Valadares · MG · Available for remote">Governador Valadares · MG · Disponível para remoto</div>
   </div>
 </footer>
 
@@ -1193,6 +1295,53 @@
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- IDIOMAS ---------- */
+  const translations = {
+    pt: {
+      title: 'Alexandre Venâncio — Growth Marketing & Comunicação',
+      desc: 'Portfólio de Alexandre Venâncio. Growth Marketing, estratégia, dados e comunicação criativa. R$ 27M em negócios gerados, +2.000% de engajamento.'
+    },
+    en: {
+      title: 'Alexandre Venâncio — Growth Marketing & Communication',
+      desc: 'Portfolio of Alexandre Venâncio. Growth Marketing, strategy, data and creative communication. R$ 27M in deals generated, +2,000% engagement growth.'
+    }
+  };
+
+  function setLanguage(lang) {
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
+    document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+      const value = el.getAttribute('data-' + lang);
+      if (value !== null) el.textContent = value;
+    });
+    document.querySelectorAll('[data-pt-html][data-en-html]').forEach(el => {
+      const value = el.getAttribute('data-' + lang + '-html');
+      if (value !== null) el.innerHTML = value;
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    document.title = translations[lang].title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', translations[lang].desc);
+
+    try { localStorage.setItem('portfolio-lang', lang); } catch (e) {}
+  }
+
+  let initialLang = 'pt';
+  try {
+    const saved = localStorage.getItem('portfolio-lang');
+    if (saved === 'pt' || saved === 'en') initialLang = saved;
+    else if (navigator.language && !navigator.language.toLowerCase().startsWith('pt')) initialLang = 'en';
+  } catch (e) {}
+  setLanguage(initialLang);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+  });
 </script>
 
 </body>
